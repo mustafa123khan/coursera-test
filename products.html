@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediCare Pharmacy - Products</title>
+
+
+    <!-- ================= BOOTSTRAP CSS ================= -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- ================= BOOTSTRAP ICONS ================= -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- ================= CUSTOM CSS ================= -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+
+            <i class="bi bi-capsule-pill"></i>
+
+            MediCare Pharmacy
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+
+                <!-- HOME -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <!-- PRODUCTS -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="products.html">
+
+                        Products
+
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <!-- CONTACT -->
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <!-- CART -->
+
+                <li class="nav-item ms-lg-3">
+
+                    <button
+                        type="button"
+                        class="btn btn-light position-relative"
+                        onclick="showCart()">
+
+                        <i class="bi bi-cart3"></i>
+
+                        Cart
+
+                        <span
+                            id="cartCount"
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                            0
+
+                        </span>
+
+                    </button>
+
+                </li>
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     PAGE HEADER
+===================================================== -->
+
+<section class="catalog-header py-5">
+
+    <div class="container text-center">
+
+        <h1>
+
+            Product Catalog
+
+        </h1>
+
+
+        <p>
+
+            Find medicines, healthcare products and wellness essentials
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRODUCT CATALOG
+===================================================== -->
+
+<section class="container my-5">
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="row mb-4">
+
+        <div class="col-md-8 mx-auto">
+
+            <label class="form-label fw-bold">
+
+                Search Products
+
+            </label>
+
+
+            <div class="input-group input-group-lg">
+
+                <span class="input-group-text">
+
+                    <i class="bi bi-search"></i>
+
+                </span>
+
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="form-control"
+                    placeholder="Search medicine, brand or generic name..."
+                    onkeyup="filterProducts()">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= CATEGORY FILTER ================= -->
+
+    <div class="text-center mb-4">
+
+        <h4 class="mb-3">
+
+            Shop by Category
+
+        </h4>
+
+
+        <button
+            type="button"
+            class="btn btn-primary filter-btn active m-1 category-btn"
+            onclick="filterCategory('All', this)">
+
+            All Products
+
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-outline-primary filter-btn m-1 category-btn"
+            onclick="filterCategory('Medicines', this)">
+
+            Medicines
+
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-outline-primary filter-btn m-1 category-btn"
+            onclick="filterCategory('Healthcare', this)">
+
+            Healthcare
+
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-outline-primary filter-btn m-1 category-btn"
+            onclick="filterCategory('Personal Care', this)">
+
+            Personal Care
+
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-outline-primary filter-btn m-1 category-btn"
+            onclick="filterCategory('Baby Care', this)">
+
+            Baby Care
+
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-outline-primary filter-btn m-1 category-btn"
+            onclick="filterCategory('Wellness', this)">
+
+            Wellness
+
+        </button>
+
+
+        <button
+            type="button"
+            class="btn btn-outline-primary filter-btn m-1 category-btn"
+            onclick="filterCategory('Medical Devices', this)">
+
+            Medical Devices
+
+        </button>
+
+    </div>
+
+
+
+    <!-- ================= ADVANCED FILTERS ================= -->
+
+    <div class="card shadow-sm border-0 p-4 mb-5">
+
+        <h4 class="mb-4">
+
+            <i class="bi bi-funnel"></i>
+
+            Search & Filter
+
+        </h4>
+
+
+        <div class="row g-3">
+
+
+            <!-- PRODUCT TYPE -->
+
+            <div class="col-md-4">
+
+                <label class="form-label fw-bold">
+
+                    Product Type
+
+                </label>
+
+
+                <select
+                    id="typeFilter"
+                    class="form-select"
+                    onchange="filterProducts()">
+
+                    <option value="All">
+
+                        All Types
+
+                    </option>
+
+
+                    <option value="Prescription">
+
+                        Prescription Medicines
+
+                    </option>
+
+
+                    <option value="OTC">
+
+                        Over-the-Counter Medicines
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- BRAND -->
+
+            <div class="col-md-4">
+
+                <label class="form-label fw-bold">
+
+                    Brand
+
+                </label>
+
+
+                <select
+                    id="brandFilter"
+                    class="form-select"
+                    onchange="filterProducts()">
+
+                    <option value="All">
+
+                        All Brands
+
+                    </option>
+
+
+                    <option value="Cipla">
+
+                        Cipla
+
+                    </option>
+
+
+                    <option value="Sun Pharma">
+
+                        Sun Pharma
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- PRESCRIPTION -->
+
+            <div class="col-md-4">
+
+                <label class="form-label fw-bold">
+
+                    Prescription Required
+
+                </label>
+
+
+                <select
+                    id="prescriptionFilter"
+                    class="form-select"
+                    onchange="filterProducts()">
+
+                    <option value="All">
+
+                        All
+
+                    </option>
+
+
+                    <option value="Yes">
+
+                        Prescription Required
+
+                    </option>
+
+
+                    <option value="No">
+
+                        No Prescription
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- MINIMUM PRICE -->
+
+            <div class="col-md-4">
+
+                <label class="form-label fw-bold">
+
+                    Minimum Price
+
+                </label>
+
+
+                <div class="input-group">
+
+                    <span class="input-group-text">
+
+                        ₹
+
+                    </span>
+
+
+                    <input
+                        type="number"
+                        id="minPrice"
+                        class="form-control"
+                        placeholder="Min Price"
+                        min="0"
+                        oninput="filterProducts()">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MAXIMUM PRICE -->
+
+            <div class="col-md-4">
+
+                <label class="form-label fw-bold">
+
+                    Maximum Price
+
+                </label>
+
+
+                <div class="input-group">
+
+                    <span class="input-group-text">
+
+                        ₹
+
+                    </span>
+
+
+                    <input
+                        type="number"
+                        id="maxPrice"
+                        class="form-control"
+                        placeholder="Max Price"
+                        min="0"
+                        oninput="filterProducts()">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SORT -->
+
+            <div class="col-md-4">
+
+                <label class="form-label fw-bold">
+
+                    Sort By
+
+                </label>
+
+
+                <select
+                    id="sortFilter"
+                    class="form-select"
+                    onchange="filterProducts()">
+
+                    <option value="Default">
+
+                        Default
+
+                    </option>
+
+
+                    <option value="PriceLow">
+
+                        Price: Low to High
+
+                    </option>
+
+
+                    <option value="PriceHigh">
+
+                        Price: High to Low
+
+                    </option>
+
+
+                    <option value="Popularity">
+
+                        Popularity
+
+                    </option>
+
+
+                    <option value="Newest">
+
+                        Newest
+
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RESET BUTTON -->
+
+        <div class="text-center mt-4">
+
+            <button
+                type="button"
+                class="btn btn-secondary"
+                onclick="resetFilters()">
+
+                <i class="bi bi-arrow-clockwise"></i>
+
+                Reset Filters
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================= PRODUCT COUNT ================= -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <h4>
+
+            Available Products
+
+        </h4>
+
+
+        <span
+            id="productCount"
+            class="badge bg-primary fs-6">
+
+            0 Products Found
+
+        </span>
+
+    </div>
+
+
+
+    <!-- ================= PRODUCT CONTAINER ================= -->
+
+    <div
+        id="productContainer"
+        class="row g-4">
+
+    </div>
+
+
+
+    <!-- ================= NO PRODUCTS ================= -->
+
+    <div
+        id="noProducts"
+        class="text-center py-5"
+        style="display:none;">
+
+        <i
+            class="bi bi-search"
+            style="font-size:60px;color:#6c757d;">
+
+        </i>
+
+
+        <h3 class="mt-3">
+
+            No Products Found
+
+        </h3>
+
+
+        <p class="text-muted">
+
+            Try changing your search or filter options.
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="bg-primary text-white text-center py-4">
+
+    <div class="container">
+
+        <h5>
+
+            <i class="bi bi-capsule-pill"></i>
+
+            MediCare Pharmacy
+
+        </h5>
+
+
+        <p class="mb-0">
+
+            Your trusted online pharmacy and healthcare store.
+
+        </p>
+
+
+        <p class="mb-0 mt-2">
+
+            &copy; 2026 MediCare Pharmacy. All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+
+<!-- Bootstrap JavaScript -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Supabase -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+
+<!-- Supabase Configuration -->
+
+<script src="./js/supabase-config.js"></script>
+
+
+<!-- Products JavaScript -->
+
+<script src="./js/products.js?v=3"></script>
+
+
+
+<!-- =====================================================
+     CART BUTTON
+===================================================== -->
+
+<script>
+
+function showCart() {
+
+    /*
+       Cart is stored in Supabase.
+       Do NOT check localStorage here.
+       Simply open the real cart page.
+    */
+
+    window.location.href = "cart.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout - MediCare Pharmacy</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ===================================================== -->
+<!-- NAVBAR -->
+<!-- ===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="index.html">
+
+            <i class="bi bi-capsule"></i>
+
+            MediCare Pharmacy
+
+        </a>
+
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="products.html">
+
+                        Products
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="prescription.html">
+
+                        Prescription
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item ms-lg-3">
+
+                    <a
+                        class="btn btn-light text-primary"
+                        href="cart.html">
+
+                        <i class="bi bi-cart3"></i>
+
+                        Cart
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ===================================================== -->
+<!-- PAGE HEADER -->
+<!-- ===================================================== -->
+
+<section class="bg-light py-4">
+
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+
+            <ol class="breadcrumb mb-2">
+
+                <li class="breadcrumb-item">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                </li>
+
+                <li class="breadcrumb-item">
+
+                    <a href="cart.html">
+                        Cart
+                    </a>
+
+                </li>
+
+                <li class="breadcrumb-item active">
+
+                    Checkout
+
+                </li>
+
+            </ol>
+
+        </nav>
+
+
+        <h1 class="fw-bold mb-0">
+
+            <i class="bi bi-credit-card"></i>
+
+            Checkout
+
+        </h1>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================================== -->
+<!-- CHECKOUT -->
+<!-- ===================================================== -->
+
+<div class="container py-5">
+
+    <form id="checkoutForm">
+
+        <div class="row g-4">
+
+
+            <!-- ================================================= -->
+            <!-- LEFT SIDE -->
+            <!-- ================================================= -->
+
+            <div class="col-lg-8">
+
+
+                <!-- ================================================= -->
+                <!-- 1. DELIVERY ADDRESS -->
+                <!-- ================================================= -->
+
+                <div class="card shadow-sm border-0 mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="fw-bold mb-4">
+
+                            <span class="badge bg-primary me-2">
+                                1
+                            </span>
+
+                            Delivery Address
+
+                        </h3>
+
+
+                        <div class="row g-3">
+
+
+                            <!-- Full Name -->
+
+                            <div class="col-md-6">
+
+                                <label
+                                    for="fullName"
+                                    class="form-label fw-bold">
+
+                                    Full Name
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="fullName"
+                                    placeholder="Enter your full name"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Mobile -->
+
+                            <div class="col-md-6">
+
+                                <label
+                                    for="mobile"
+                                    class="form-label fw-bold">
+
+                                    Mobile Number
+
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    class="form-control"
+                                    id="mobile"
+                                    placeholder="Enter mobile number"
+                                    maxlength="10"
+                                    inputmode="numeric"
+                                    required>
+
+                            </div>
+
+
+                            <!-- Address -->
+
+                            <div class="col-12">
+
+                                <label
+                                    for="address"
+                                    class="form-label fw-bold">
+
+                                    Address
+
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    id="address"
+                                    rows="3"
+                                    placeholder="House No., Street, Area"
+                                    required></textarea>
+
+                            </div>
+
+
+                            <!-- City -->
+
+                            <div class="col-md-4">
+
+                                <label
+                                    for="city"
+                                    class="form-label fw-bold">
+
+                                    City
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="city"
+                                    placeholder="Enter city"
+                                    required>
+
+                            </div>
+
+
+                            <!-- State -->
+
+                            <div class="col-md-4">
+
+                                <label
+                                    for="state"
+                                    class="form-label fw-bold">
+
+                                    State
+
+                                </label>
+
+                                <select
+                                    class="form-select"
+                                    id="state"
+                                    required>
+
+                                    <option value="">
+                                        Select State
+                                    </option>
+
+                                    <option value="Maharashtra">
+                                        Maharashtra
+                                    </option>
+
+                                    <option value="Gujarat">
+                                        Gujarat
+                                    </option>
+
+                                    <option value="Karnataka">
+                                        Karnataka
+                                    </option>
+
+                                    <option value="Goa">
+                                        Goa
+                                    </option>
+
+                                    <option value="Delhi">
+                                        Delhi
+                                    </option>
+
+                                    <option value="Rajasthan">
+                                        Rajasthan
+                                    </option>
+
+                                    <option value="Tamil Nadu">
+                                        Tamil Nadu
+                                    </option>
+
+                                    <option value="Telangana">
+                                        Telangana
+                                    </option>
+
+                                    <option value="Uttar Pradesh">
+                                        Uttar Pradesh
+                                    </option>
+
+                                    <option value="West Bengal">
+                                        West Bengal
+                                    </option>
+
+                                    <option value="Other">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Pincode -->
+
+                            <div class="col-md-4">
+
+                                <label
+                                    for="pincode"
+                                    class="form-label fw-bold">
+
+                                    Pincode
+
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="pincode"
+                                    placeholder="6-digit pincode"
+                                    maxlength="6"
+                                    inputmode="numeric"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================================================= -->
+                <!-- 2. PRESCRIPTION -->
+                <!-- ================================================= -->
+
+                <div class="card shadow-sm border-0 mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="fw-bold mb-4">
+
+                            <span class="badge bg-primary me-2">
+                                2
+                            </span>
+
+                            Prescription
+
+                        </h3>
+
+
+                        <div class="alert alert-info">
+
+                            <i class="bi bi-info-circle"></i>
+
+                            If your order contains prescription medicines,
+                            please upload a valid prescription.
+
+                        </div>
+
+
+                        <label
+                            for="prescription"
+                            class="form-label fw-bold">
+
+                            Upload Prescription
+
+                        </label>
+
+
+                        <input
+                            type="file"
+                            class="form-control"
+                            id="prescription"
+                            accept=".jpg,.jpeg,.png,.pdf">
+
+
+                        <small class="text-muted">
+
+                            Accepted formats: JPG, JPEG, PNG and PDF.
+
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================================================= -->
+                <!-- 3. DELIVERY INSTRUCTIONS -->
+                <!-- ================================================= -->
+
+                <div class="card shadow-sm border-0 mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="fw-bold mb-4">
+
+                            <span class="badge bg-primary me-2">
+                                3
+                            </span>
+
+                            Delivery Instructions
+
+                        </h3>
+
+
+                        <label
+                            for="instructions"
+                            class="form-label">
+
+                            Additional Instructions
+
+                        </label>
+
+
+                        <textarea
+                            class="form-control"
+                            id="instructions"
+                            rows="4"
+                            placeholder="Example: Leave at reception..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ================================================= -->
+                <!-- 4. PAYMENT METHOD -->
+                <!-- ================================================= -->
+
+                <div class="card shadow-sm border-0 mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="fw-bold mb-4">
+
+                            <span class="badge bg-primary me-2">
+                                4
+                            </span>
+
+                            Payment Method
+
+                        </h3>
+
+
+                        <!-- Cash on Delivery -->
+
+                        <div class="form-check border rounded p-3 mb-3">
+
+                            <input
+                                class="form-check-input ms-0 me-2"
+                                type="radio"
+                                name="paymentMethod"
+                                id="cod"
+                                value="Cash on Delivery"
+                                required>
+
+                            <label
+                                class="form-check-label"
+                                for="cod">
+
+                                <i class="bi bi-cash-stack"></i>
+
+                                <strong>
+                                    Cash on Delivery
+                                </strong>
+
+                                <br>
+
+                                <small class="text-muted ms-4">
+                                    Pay when your order is delivered.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- UPI -->
+
+                        <div class="form-check border rounded p-3 mb-3">
+
+                            <input
+                                class="form-check-input ms-0 me-2"
+                                type="radio"
+                                name="paymentMethod"
+                                id="upi"
+                                value="UPI">
+
+                            <label
+                                class="form-check-label"
+                                for="upi">
+
+                                <i class="bi bi-phone"></i>
+
+                                <strong>
+                                    UPI
+                                </strong>
+
+                                <br>
+
+                                <small class="text-muted ms-4">
+                                    Pay using UPI.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Card -->
+
+                        <div class="form-check border rounded p-3 mb-3">
+
+                            <input
+                                class="form-check-input ms-0 me-2"
+                                type="radio"
+                                name="paymentMethod"
+                                id="card"
+                                value="Card">
+
+                            <label
+                                class="form-check-label"
+                                for="card">
+
+                                <i class="bi bi-credit-card"></i>
+
+                                <strong>
+                                    Card
+                                </strong>
+
+                                <br>
+
+                                <small class="text-muted ms-4">
+                                    Pay using debit or credit card.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+
+                        <!-- Net Banking -->
+
+                        <div class="form-check border rounded p-3">
+
+                            <input
+                                class="form-check-input ms-0 me-2"
+                                type="radio"
+                                name="paymentMethod"
+                                id="netbanking"
+                                value="Net Banking">
+
+                            <label
+                                class="form-check-label"
+                                for="netbanking">
+
+                                <i class="bi bi-bank"></i>
+
+                                <strong>
+                                    Net Banking
+                                </strong>
+
+                                <br>
+
+                                <small class="text-muted ms-4">
+                                    Pay using internet banking.
+                                </small>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- RIGHT SIDE - ORDER SUMMARY -->
+            <!-- ================================================= -->
+
+            <div class="col-lg-4">
+
+                <div
+                    class="card shadow-sm border-0"
+                    style="position: sticky; top: 90px;">
+
+                    <div class="card-body p-4">
+
+
+                        <h3 class="fw-bold mb-4">
+
+                            <span class="badge bg-primary me-2">
+                                5
+                            </span>
+
+                            Order Summary
+
+                        </h3>
+
+
+                        <!-- Products loaded from Supabase -->
+
+                        <div
+                            id="checkoutProducts"
+                            class="mb-3">
+
+                            <div class="text-center text-muted py-3">
+
+                                <div
+                                    class="spinner-border spinner-border-sm text-primary"
+                                    role="status">
+                                </div>
+
+                                Loading cart...
+
+                            </div>
+
+                        </div>
+
+
+                        <hr>
+
+
+                        <!-- GST -->
+
+                        <div class="d-flex justify-content-between mb-2">
+
+                            <span>
+                                GST
+                            </span>
+
+                            <span id="checkoutGST">
+                                ₹0.00
+                            </span>
+
+                        </div>
+
+
+                        <!-- Delivery -->
+
+                        <div class="d-flex justify-content-between mb-2">
+
+                            <span>
+                                Delivery
+                            </span>
+
+                            <span id="checkoutDelivery">
+                                ₹0.00
+                            </span>
+
+                        </div>
+
+
+                        <hr>
+
+
+                        <!-- Grand Total -->
+
+                        <div class="d-flex justify-content-between">
+
+                            <strong class="fs-5">
+                                Grand Total
+                            </strong>
+
+                            <strong
+                                class="fs-4 text-primary"
+                                id="checkoutTotal">
+
+                                ₹0.00
+
+                            </strong>
+
+                        </div>
+
+
+                        <button
+                            type="submit"
+                            id="confirmOrderButton"
+                            class="btn btn-success btn-lg w-100 mt-4">
+
+                            <i class="bi bi-check-circle"></i>
+
+                            Confirm Order
+
+                        </button>
+
+
+                        <a
+                            href="cart.html"
+                            class="btn btn-outline-secondary w-100 mt-2">
+
+                            <i class="bi bi-arrow-left"></i>
+
+                            Back to Cart
+
+                        </a>
+
+
+                        <div class="text-center mt-3">
+
+                            <small class="text-muted">
+
+                                <i class="bi bi-shield-check"></i>
+
+                                Secure Checkout
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
+
+<footer class="bg-dark text-white py-4 mt-5">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6">
+
+                <h5>
+
+                    <i class="bi bi-capsule"></i>
+
+                    MediCare Pharmacy
+
+                </h5>
+
+                <p class="text-light mb-0">
+
+                    Your trusted online pharmacy and healthcare store.
+
+                </p>
+
+            </div>
+
+
+            <div class="col-md-6 text-md-end mt-3 mt-md-0">
+
+                <p class="mb-1">
+
+                    <a
+                        href="products.html"
+                        class="text-white text-decoration-none">
+
+                        Products
+
+                    </a>
+
+                </p>
+
+                <p class="mb-0">
+
+                    <a
+                        href="contact.html"
+                        class="text-white text-decoration-none">
+
+                        Contact Us
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="text-center">
+
+            <small>
+
+                © 2026 MediCare Pharmacy. All Rights Reserved.
+
+            </small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Supabase -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+
+<!-- Supabase Configuration -->
+
+<script src="js/supabase-config.js"></script>
+
+
+<!-- Checkout JavaScript -->
+
+<script src="js/checkout.js"></script>
+
+
+</body>
+
+</html>

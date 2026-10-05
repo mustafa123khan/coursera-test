@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MediCare Pharmacy</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+
+            <span class="fs-2">💊</span>
+
+            <div class="ms-2">
+
+                <strong class="text-primary fs-4">
+                    MediCare
+                </strong>
+
+                <small class="d-block text-muted">
+                    Your Health, Our Priority
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <!-- MOBILE MENU BUTTON -->
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarMenu"
+            aria-controls="navbarMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <!-- NAVIGATION -->
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+
+                <!-- HOME -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="index.html">
+
+                        <i class="bi bi-house"></i>
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <!-- PRODUCTS -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="products.html">
+
+                        <i class="bi bi-grid"></i>
+                        Products
+
+                    </a>
+
+                </li>
+
+
+                <!-- MY ORDERS -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="my-orders.html">
+
+                        <i class="bi bi-box-seam"></i>
+                        My Orders
+
+                    </a>
+
+                </li>
+
+
+                <!-- MEDICINES -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="products.html">
+
+                        <i class="bi bi-capsule-pill"></i>
+                        Medicines
+
+                    </a>
+
+                </li>
+
+
+                <!-- PRESCRIPTION -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="prescription.html">
+
+                        <i class="bi bi-prescription2"></i>
+                        Prescription
+
+                    </a>
+
+                </li>
+
+
+                <!-- HEALTHCARE -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="products.html">
+
+                        Healthcare
+
+                    </a>
+
+                </li>
+
+
+                <!-- PERSONAL CARE -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="products.html">
+
+                        Personal Care
+
+                    </a>
+
+                </li>
+
+
+                <!-- EQUIPMENT -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="products.html">
+
+                        Equipment
+
+                    </a>
+
+                </li>
+
+
+                <!-- OFFERS -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link text-danger"
+                        href="#offers">
+
+                        <i class="bi bi-tag"></i>
+                        Offers
+
+                    </a>
+
+                </li>
+
+
+                <!-- ABOUT -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="about.html">
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <!-- CONTACT -->
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="contact.html">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+
+                <!-- CART -->
+                <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+
+                    <a
+                        class="btn btn-outline-primary"
+                        href="cart.html">
+
+                        <i class="bi bi-cart3"></i>
+                        Cart
+
+                    </a>
+
+                </li>
+
+
+                <!-- LOGIN -->
+                <li
+                    class="nav-item ms-lg-2 mt-2 mt-lg-0"
+                    id="loginNavItem">
+
+                    <a
+                        id="loginButton"
+                        class="btn btn-primary"
+                        href="login.html">
+
+                        <i class="bi bi-person"></i>
+                        Login
+
+                    </a>
+
+                </li>
+
+
+                <!-- SIGN UP -->
+                <li
+                    class="nav-item ms-lg-2 mt-2 mt-lg-0"
+                    id="signupNavItem">
+
+                    <a
+                        id="signupButton"
+                        class="btn btn-outline-primary"
+                        href="signup.html">
+
+                        <i class="bi bi-person-plus"></i>
+                        Sign Up
+
+                    </a>
+
+                </li>
+
+
+                <!-- LOGGED-IN USER -->
+                <li
+                    class="nav-item ms-lg-2 mt-2 mt-lg-0 d-none"
+                    id="userMenu">
+
+                    <div class="dropdown">
+
+                        <button
+                            class="btn btn-primary dropdown-toggle"
+                            type="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+
+                            <i class="bi bi-person-circle"></i>
+
+                            <span id="userName">
+                                My Account
+                            </span>
+
+                        </button>
+
+
+                        <ul class="dropdown-menu dropdown-menu-end">
+
+
+                            <!-- PROFILE -->
+                            <li>
+
+                                <a
+                                    class="dropdown-item"
+                                    href="profile.html">
+
+                                    <i class="bi bi-person"></i>
+                                    My Profile
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- MY ORDERS -->
+                            <li>
+
+                                <a
+                                    class="dropdown-item"
+                                    href="my-orders.html">
+
+                                    <i class="bi bi-box-seam"></i>
+                                    My Orders
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- CART -->
+                            <li>
+
+                                <a
+                                    class="dropdown-item"
+                                    href="cart.html">
+
+                                    <i class="bi bi-cart3"></i>
+                                    My Cart
+
+                                </a>
+
+                            </li>
+
+
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+
+
+                            <!-- LOGOUT -->
+                            <li>
+
+                                <button
+                                    class="dropdown-item text-danger"
+                                    id="logoutButton"
+                                    type="button">
+
+                                    <i class="bi bi-box-arrow-right"></i>
+                                    Logout
+
+                                </button>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO SLIDER
+===================================================== -->
+
+<div
+    id="heroSlider"
+    class="carousel slide"
+    data-bs-ride="carousel"
+    data-bs-interval="4000">
+
+    <!-- INDICATORS -->
+
+    <div class="carousel-indicators">
+
+        <button
+            type="button"
+            data-bs-target="#heroSlider"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true">
+        </button>
+
+        <button
+            type="button"
+            data-bs-target="#heroSlider"
+            data-bs-slide-to="1">
+        </button>
+
+        <button
+            type="button"
+            data-bs-target="#heroSlider"
+            data-bs-slide-to="2">
+        </button>
+
+    </div>
+
+
+    <!-- SLIDES -->
+
+    <div class="carousel-inner">
+
+
+        <!-- SLIDE 1 -->
+
+        <div class="carousel-item active bg-light">
+
+            <div class="container py-5">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-7">
+
+                        <span class="badge bg-primary mb-3">
+
+                            <i class="bi bi-shield-check"></i>
+                            Trusted Healthcare
+
+                        </span>
+
+                        <h1 class="display-4 fw-bold">
+
+                            Your Health,
+
+                            <span class="text-primary">
+                                Our Priority
+                            </span>
+
+                        </h1>
+
+                        <p class="lead text-muted">
+
+                            Quality medicines and healthcare products
+                            delivered safely to your doorstep.
+
+                        </p>
+
+                        <div class="mt-4">
+
+                            <a
+                                href="products.html"
+                                class="btn btn-primary btn-lg me-2">
+
+                                <i class="bi bi-bag-check"></i>
+                                Shop Now
+
+                            </a>
+
+                            <a
+                                href="#healthcare"
+                                class="btn btn-outline-primary btn-lg">
+
+                                Explore Categories
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+
+                        <div class="hero-icon">
+
+                            <i class="bi bi-capsule-pill"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 2 -->
+
+        <div class="carousel-item bg-success-subtle">
+
+            <div class="container py-5">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-7">
+
+                        <span class="badge bg-success mb-3">
+
+                            <i class="bi bi-tag-fill"></i>
+                            Special Offer
+
+                        </span>
+
+                        <h1 class="display-4 fw-bold">
+
+                            Healthcare Made
+
+                            <span class="text-success">
+                                Simple & Affordable
+                            </span>
+
+                        </h1>
+
+                        <p class="lead text-muted">
+
+                            Discover great deals on medicines,
+                            wellness and healthcare products.
+
+                        </p>
+
+                        <a
+                            href="#offers"
+                            class="btn btn-success btn-lg mt-3">
+
+                            <i class="bi bi-percent"></i>
+                            View Offers
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+
+                        <div class="hero-icon">
+
+                            <i class="bi bi-bag-heart"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SLIDE 3 -->
+
+        <div class="carousel-item bg-danger-subtle">
+
+            <div class="container py-5">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-7">
+
+                        <span class="badge bg-danger mb-3">
+
+                            <i class="bi bi-truck"></i>
+                            Fast Delivery
+
+                        </span>
+
+                        <h1 class="display-4 fw-bold">
+
+                            Healthcare
+
+                            <span class="text-danger">
+                                At Your Doorstep
+                            </span>
+
+                        </h1>
+
+                        <p class="lead text-muted">
+
+                            Browse products and place your order
+                            quickly and conveniently.
+
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-danger btn-lg mt-3">
+
+                            <i class="bi bi-shop"></i>
+                            Explore Products
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="col-lg-5 text-center mt-4 mt-lg-0">
+
+                        <div class="hero-icon">
+
+                            <i class="bi bi-truck"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PREVIOUS -->
+
+    <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#heroSlider"
+        data-bs-slide="prev">
+
+        <span class="carousel-control-prev-icon"></span>
+
+        <span class="visually-hidden">
+            Previous
+        </span>
+
+    </button>
+
+
+    <!-- NEXT -->
+
+    <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#heroSlider"
+        data-bs-slide="next">
+
+        <span class="carousel-control-next-icon"></span>
+
+        <span class="visually-hidden">
+            Next
+        </span>
+
+    </button>
+
+</div>
+
+
+
+<!-- =====================================================
+     FEATURED MEDICINES
+===================================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-bold">
+                SHOP NOW
+            </span>
+
+            <h2 class="fw-bold">
+                Featured Medicines
+            </h2>
+
+            <p class="text-muted">
+                Popular medicines and healthcare essentials
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="product-icon bg-light">
+
+                        <i class="bi bi-capsule"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="badge bg-danger">
+                            15% OFF
+                        </span>
+
+                        <h5 class="card-title mt-3">
+                            Paracetamol 500mg
+                        </h5>
+
+                        <p class="text-muted">
+                            HealthCare Brand
+                        </p>
+
+                        <p class="text-warning">
+                            ★★★★★
+                        </p>
+
+                        <h5 class="text-primary">
+
+                            ₹85
+
+                            <del class="text-muted fs-6">
+                                ₹100
+                            </del>
+
+                        </h5>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-primary w-100">
+
+                            <i class="bi bi-cart-plus"></i>
+                            View Product
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="product-icon bg-light">
+
+                        <i class="bi bi-capsule"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="badge bg-danger">
+                            10% OFF
+                        </span>
+
+                        <h5 class="card-title mt-3">
+                            Vitamin C Tablets
+                        </h5>
+
+                        <p class="text-muted">
+                            NutriHealth
+                        </p>
+
+                        <p class="text-warning">
+                            ★★★★☆
+                        </p>
+
+                        <h5 class="text-primary">
+
+                            ₹180
+
+                            <del class="text-muted fs-6">
+                                ₹200
+                            </del>
+
+                        </h5>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-primary w-100">
+
+                            <i class="bi bi-cart-plus"></i>
+                            View Product
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="product-icon bg-light">
+
+                        <i class="bi bi-droplet"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="badge bg-danger">
+                            20% OFF
+                        </span>
+
+                        <h5 class="card-title mt-3">
+                            Antiseptic Cream
+                        </h5>
+
+                        <p class="text-muted">
+                            CarePlus
+                        </p>
+
+                        <p class="text-warning">
+                            ★★★★★
+                        </p>
+
+                        <h5 class="text-primary">
+
+                            ₹120
+
+                            <del class="text-muted fs-6">
+                                ₹150
+                            </del>
+
+                        </h5>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-primary w-100">
+
+                            <i class="bi bi-cart-plus"></i>
+                            View Product
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card h-100 shadow-sm border-0">
+
+                    <div class="product-icon bg-light">
+
+                        <i class="bi bi-bandaid"></i>
+
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="badge bg-danger">
+                            12% OFF
+                        </span>
+
+                        <h5 class="card-title mt-3">
+                            First Aid Kit
+                        </h5>
+
+                        <p class="text-muted">
+                            MediSafe
+                        </p>
+
+                        <p class="text-warning">
+                            ★★★★☆
+                        </p>
+
+                        <h5 class="text-primary">
+
+                            ₹350
+
+                            <del class="text-muted fs-6">
+                                ₹400
+                            </del>
+
+                        </h5>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-primary w-100">
+
+                            <i class="bi bi-cart-plus"></i>
+                            View Product
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BEST SELLERS
+===================================================== -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-bold">
+                POPULAR
+            </span>
+
+            <h2 class="fw-bold">
+                Best Selling Products
+            </h2>
+
+            <p class="text-muted">
+                Products loved by our customers
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card text-center border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+                            <i class="bi bi-thermometer-half"></i>
+                        </div>
+
+                        <h5>
+                            Digital Thermometer
+                        </h5>
+
+                        <h5 class="text-primary">
+                            ₹299
+                        </h5>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-outline-primary">
+
+                            View Product
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card text-center border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+                            <i class="bi bi-heart-pulse"></i>
+                        </div>
+
+                        <h5>
+                            BP Monitor
+                        </h5>
+
+                        <h5 class="text-primary">
+                            ₹1,499
+                        </h5>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-outline-primary">
+
+                            View Product
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card text-center border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+                            <i class="bi bi-capsule-pill"></i>
+                        </div>
+
+                        <h5>
+                            Multivitamin Tablets
+                        </h5>
+
+                        <h5 class="text-primary">
+                            ₹399
+                        </h5>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-outline-primary">
+
+                            View Product
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card text-center border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+                            <i class="bi bi-mask"></i>
+                        </div>
+
+                        <h5>
+                            Face Masks
+                        </h5>
+
+                        <h5 class="text-primary">
+                            ₹149
+                        </h5>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-outline-primary">
+
+                            View Product
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NEW ARRIVALS
+===================================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-bold">
+                NEW
+            </span>
+
+            <h2 class="fw-bold">
+                New Arrivals
+            </h2>
+
+            <p class="text-muted">
+                Check out our latest healthcare products
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body d-flex align-items-center gap-3">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-droplet-half"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Advanced Skin Care Cream
+                            </h5>
+
+                            <p class="text-muted">
+                                New personal care product
+                            </p>
+
+                            <strong class="text-primary fs-5">
+                                ₹499
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body d-flex align-items-center gap-3">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-cup-straw"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Protein Supplement
+                            </h5>
+
+                            <p class="text-muted">
+                                Nutrition and wellness product
+                            </p>
+
+                            <strong class="text-primary fs-5">
+                                ₹899
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body d-flex align-items-center gap-3">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-heart-pulse"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5>
+                                Smart BP Monitor
+                            </h5>
+
+                            <p class="text-muted">
+                                Home healthcare equipment
+                            </p>
+
+                            <strong class="text-primary fs-5">
+                                ₹1,999
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HEALTHCARE CATEGORIES
+===================================================== -->
+
+<section
+    class="py-5 bg-light"
+    id="healthcare">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-bold">
+                EXPLORE
+            </span>
+
+            <h2 class="fw-bold">
+                Healthcare Products
+            </h2>
+
+            <p class="text-muted">
+                Everything you need for your health and wellness
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <!-- MEDICINES -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card text-center border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-capsule-pill"></i>
+
+                        </div>
+
+                        <h5>
+                            Medicines
+                        </h5>
+
+                        <p class="text-muted">
+                            Tablets, capsules, syrups and more
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-link">
+
+                            Shop Now →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WELLNESS -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card text-center border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-heart-pulse"></i>
+
+                        </div>
+
+                        <h5>
+                            Wellness
+                        </h5>
+
+                        <p class="text-muted">
+                            Vitamins and wellness products
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-link">
+
+                            Shop Now →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PERSONAL CARE -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card text-center border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-droplet"></i>
+
+                        </div>
+
+                        <h5>
+                            Personal Care
+                        </h5>
+
+                        <p class="text-muted">
+                            Skin, hair and hygiene products
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-link">
+
+                            Shop Now →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEDICAL EQUIPMENT -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="card text-center border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-heart-pulse"></i>
+
+                        </div>
+
+                        <h5>
+                            Medical Equipment
+                        </h5>
+
+                        <p class="text-muted">
+                            Monitors and healthcare devices
+                        </p>
+
+                        <a
+                            href="products.html"
+                            class="btn btn-link">
+
+                            Shop Now →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     OFFERS
+===================================================== -->
+
+<section
+    class="py-5"
+    id="offers">
+
+    <div class="container">
+
+        <div class="offer-box text-white rounded-4 p-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-9">
+
+                    <small class="fw-bold">
+                        LIMITED TIME OFFER
+                    </small>
+
+                    <h2 class="fw-bold mt-2">
+                        Save Up To 30% On Healthcare Products
+                    </h2>
+
+                    <p>
+                        Get amazing discounts on selected medicines,
+                        wellness products and medical equipment.
+                    </p>
+
+                    <a
+                        href="products.html"
+                        class="btn btn-light">
+
+                        <i class="bi bi-bag-check"></i>
+                        Shop Offers
+
+                    </a>
+
+                </div>
+
+
+                <div class="col-lg-3 text-center">
+
+                    <div class="offer-icon">
+
+                        <i class="bi bi-percent"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     HEALTH TIPS
+===================================================== -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-bold">
+                HEALTH & WELLNESS
+            </span>
+
+            <h2 class="fw-bold">
+                Health Tips
+            </h2>
+
+            <p class="text-muted">
+                Simple information for a healthier lifestyle
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-droplet"></i>
+
+                        </div>
+
+                        <h5>
+                            Stay Hydrated
+                        </h5>
+
+                        <p class="text-muted">
+
+                            Drinking enough water throughout the day
+                            helps support your body's normal functions.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-apple"></i>
+
+                        </div>
+
+                        <h5>
+                            Eat Balanced Meals
+                        </h5>
+
+                        <p class="text-muted">
+
+                            Include a variety of nutritious foods
+                            in your daily meals.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="category-icon">
+
+                            <i class="bi bi-person-walking"></i>
+
+                        </div>
+
+                        <h5>
+                            Stay Active
+                        </h5>
+
+                        <p class="text-muted">
+
+                            Regular physical activity can support
+                            overall health and well-being.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TESTIMONIALS
+===================================================== -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-bold">
+                CUSTOMER REVIEWS
+            </span>
+
+            <h2 class="fw-bold">
+                What Our Customers Say
+            </h2>
+
+        </div>
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-warning fs-5">
+                            ★★★★★
+                        </div>
+
+                        <p class="mt-3 text-muted">
+
+                            "The website is easy to use and I found
+                            the healthcare products I needed quickly."
+
+                        </p>
+
+                        <h6>
+                            Rahul Sharma
+                        </h6>
+
+                        <small class="text-muted">
+                            Verified Customer
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-warning fs-5">
+                            ★★★★★
+                        </div>
+
+                        <p class="mt-3 text-muted">
+
+                            "Good product selection and a simple
+                            ordering experience."
+
+                        </p>
+
+                        <h6>
+                            Priya Patel
+                        </h6>
+
+                        <small class="text-muted">
+                            Verified Customer
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="card border-0 shadow-sm h-100">
+
+                    <div class="card-body p-4">
+
+                        <div class="text-warning fs-5">
+                            ★★★★☆
+                        </div>
+
+                        <p class="mt-3 text-muted">
+
+                            "I liked the clean design and the
+                            easy-to-find product categories."
+
+                        </p>
+
+                        <h6>
+                            Amit Kumar
+                        </h6>
+
+                        <small class="text-muted">
+                            Verified Customer
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
+
+<section class="py-5 bg-light">
+
+    <div class="container">
+
+        <div
+            class="text-center mx-auto"
+            style="max-width:750px;">
+
+            <h2 class="fw-bold">
+                Stay Updated With MediCare
+            </h2>
+
+            <p class="text-muted">
+
+                Subscribe to receive healthcare tips,
+                new product updates and special offers.
+
+            </p>
+
+
+            <form class="row g-2">
+
+                <div class="col-md-8">
+
+                    <input
+                        type="email"
+                        class="form-control form-control-lg"
+                        placeholder="Enter your email address"
+                        required>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary btn-lg w-100">
+
+                        <i class="bi bi-envelope"></i>
+                        Subscribe
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer
+    class="text-white py-5"
+    id="about">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- ABOUT -->
+
+            <div class="col-lg-4">
+
+                <h3>
+                    💊 MediCare
+                </h3>
+
+                <p class="text-secondary">
+
+                    Your trusted online pharmacy for medicines,
+                    healthcare products and wellness essentials.
+
+                </p>
+
+                <div class="d-flex gap-3">
+
+                    <a
+                        href="#"
+                        class="text-white text-decoration-none">
+
+                        <i class="bi bi-facebook"></i>
+                        Facebook
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="text-white text-decoration-none">
+
+                        <i class="bi bi-instagram"></i>
+                        Instagram
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="text-white text-decoration-none">
+
+                        <i class="bi bi-twitter"></i>
+                        Twitter
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="col-lg-2">
+
+                <h5>
+                    Quick Links
+                </h5>
+
+                <a
+                    href="index.html"
+                    class="d-block text-secondary text-decoration-none mb-2">
+
+                    Home
+
+                </a>
+
+                <a
+                    href="products.html"
+                    class="d-block text-secondary text-decoration-none mb-2">
+
+                    Products
+
+                </a>
+
+                <a
+                    href="my-orders.html"
+                    class="d-block text-secondary text-decoration-none mb-2">
+
+                    My Orders
+
+                </a>
+
+                <a
+                    href="about.html"
+                    class="d-block text-secondary text-decoration-none mb-2">
+
+                    About
+
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="d-block text-secondary text-decoration-none">
+
+                    Contact
+
+                </a>
+
+            </div>
+
+
+            <!-- CATEGORIES -->
+
+            <div class="col-lg-3">
+
+                <h5>
+                    Categories
+                </h5>
+
+                <a
+                    href="products.html"
+                    class="d-block text-secondary text-decoration-none mb-2">
+
+                    Medicines
+
+                </a>
+
+                <a
+                    href="products.html"
+                    class="d-block text-secondary text-decoration-none mb-2">
+
+                    Healthcare
+
+                </a>
+
+                <a
+                    href="products.html"
+                    class="d-block text-secondary text-decoration-none mb-2">
+
+                    Personal Care
+
+                </a>
+
+                <a
+                    href="products.html"
+                    class="d-block text-secondary text-decoration-none">
+
+                    Medical Equipment
+
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="col-lg-3">
+
+                <h5>
+                    Contact
+                </h5>
+
+                <p class="text-secondary">
+
+                    <i class="bi bi-geo-alt"></i>
+                    Pune, Maharashtra
+
+                </p>
+
+                <p class="text-secondary">
+
+                    <i class="bi bi-envelope"></i>
+                    info@medicare.com
+
+                </p>
+
+                <p class="text-secondary">
+
+                    <i class="bi bi-telephone"></i>
+                    +91 98765 43210
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr class="border-secondary my-4">
+
+
+        <div class="text-center">
+
+            <p class="text-secondary mb-0">
+
+                © 2026 MediCare Pharmacy.
+                All Rights Reserved.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<!-- Bootstrap JavaScript -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Supabase JavaScript -->
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
+</script>
+
+
+<!-- Supabase Configuration -->
+<script src="./js/supabase-config.js"></script>
+
+
+<!-- Authentication -->
+<script src="./js/auth.js"></script>
+
+
+</body>
+
+</html>

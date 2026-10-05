@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account - MediCare Pharmacy</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="bg-light">
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-light bg-white shadow-sm">
+
+    <div class="container">
+
+        <a
+            class="navbar-brand d-flex align-items-center"
+            href="index.html">
+
+            <span class="fs-2">💊</span>
+
+            <div class="ms-2">
+
+                <strong class="text-primary fs-4">
+                    MediCare
+                </strong>
+
+                <small class="d-block text-muted">
+                    Your Health, Our Priority
+                </small>
+
+            </div>
+
+        </a>
+
+        <a
+            href="login.html"
+            class="btn btn-outline-primary">
+
+            <i class="bi bi-box-arrow-in-right"></i>
+            Login
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= SIGNUP SECTION ================= -->
+
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-6 col-md-8">
+
+                <div class="card border-0 shadow">
+
+                    <div class="card-body p-4 p-md-5">
+
+                        <div class="text-center mb-4">
+
+                            <div class="display-5 text-primary">
+                                <i class="bi bi-person-plus"></i>
+                            </div>
+
+                            <h2 class="fw-bold mt-2">
+                                Create Your Account
+                            </h2>
+
+                            <p class="text-muted">
+                                Join MediCare Pharmacy today
+                            </p>
+
+                        </div>
+
+
+                        <!-- SUCCESS MESSAGE -->
+
+                        <div
+                            id="successMessage"
+                            class="alert alert-success d-none">
+
+                            <i class="bi bi-check-circle"></i>
+
+                            Account created successfully!
+
+                        </div>
+
+
+                        <!-- ERROR MESSAGE -->
+
+                        <div
+                            id="errorMessage"
+                            class="alert alert-danger d-none">
+
+                        </div>
+
+
+                        <!-- SIGNUP FORM -->
+
+                        <form id="signupForm">
+
+
+                            <!-- FULL NAME -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="fullName"
+                                    class="form-label fw-semibold">
+
+                                    Full Name
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+                                        <i class="bi bi-person"></i>
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="fullName"
+                                        class="form-control"
+                                        placeholder="Enter your full name"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="email"
+                                    class="form-label fw-semibold">
+
+                                    Email Address
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+                                        <i class="bi bi-envelope"></i>
+                                    </span>
+
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        class="form-control"
+                                        placeholder="Enter your email"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="phone"
+                                    class="form-label fw-semibold">
+
+                                    Mobile Number
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+                                        <i class="bi bi-telephone"></i>
+                                    </span>
+
+                                    <input
+                                        type="tel"
+                                        id="phone"
+                                        class="form-control"
+                                        placeholder="Enter 10-digit mobile number"
+                                        maxlength="10"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- USERNAME -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="username"
+                                    class="form-label fw-semibold">
+
+                                    Username
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+                                        <i class="bi bi-person-circle"></i>
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="username"
+                                        class="form-control"
+                                        placeholder="Create a username"
+                                        required>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- PASSWORD -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="password"
+                                    class="form-label fw-semibold">
+
+                                    Password
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+                                        <i class="bi bi-lock"></i>
+                                    </span>
+
+                                    <input
+                                        type="password"
+                                        id="password"
+                                        class="form-control"
+                                        placeholder="Create a password"
+                                        required>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-outline-secondary"
+                                        onclick="togglePassword('password', this)">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                                <small class="text-muted">
+                                    Password must contain at least 6 characters.
+                                </small>
+
+                            </div>
+
+
+                            <!-- CONFIRM PASSWORD -->
+
+                            <div class="mb-3">
+
+                                <label
+                                    for="confirmPassword"
+                                    class="form-label fw-semibold">
+
+                                    Confirm Password
+
+                                </label>
+
+                                <div class="input-group">
+
+                                    <span class="input-group-text">
+                                        <i class="bi bi-lock-fill"></i>
+                                    </span>
+
+                                    <input
+                                        type="password"
+                                        id="confirmPassword"
+                                        class="form-control"
+                                        placeholder="Confirm your password"
+                                        required>
+
+                                    <button
+                                        type="button"
+                                        class="btn btn-outline-secondary"
+                                        onclick="togglePassword('confirmPassword', this)">
+
+                                        <i class="bi bi-eye"></i>
+
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- TERMS -->
+
+                            <div class="form-check mb-4">
+
+                                <input
+                                    class="form-check-input"
+                                    type="checkbox"
+                                    id="terms"
+                                    required>
+
+                                <label
+                                    class="form-check-label"
+                                    for="terms">
+
+                                    I agree to the Terms and Conditions.
+
+                                </label>
+
+                            </div>
+
+
+                            <!-- CREATE ACCOUNT -->
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary w-100 btn-lg">
+
+                                <i class="bi bi-person-plus"></i>
+                                Create Account
+
+                            </button>
+
+
+                        </form>
+
+
+                        <!-- LOGIN LINK -->
+
+                        <div class="text-center mt-4">
+
+                            <p class="mb-0">
+
+                                Already have an account?
+
+                                <a
+                                    href="login.html"
+                                    class="text-primary fw-bold">
+
+                                    Login here
+
+                                </a>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-dark text-white py-4">
+
+    <div class="container text-center">
+
+        <p class="mb-0">
+
+            © 2026 MediCare Pharmacy.
+            All Rights Reserved.
+
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- Supabase Configuration -->
+<script src="./js/supabase-config.js"></script>
+
+<!-- Signup JavaScript -->
+<script src="./js/signup.js"></script>
+
+</body>
+
+</html>

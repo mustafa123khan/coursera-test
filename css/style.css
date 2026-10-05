@@ -1,0 +1,814 @@
+/* =====================================================
+   GENERAL
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #222;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+section {
+    overflow: hidden;
+}
+
+a {
+    transition: all 0.3s ease;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+    padding: 8px 0;
+    z-index: 1000;
+}
+
+.navbar .container-fluid {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Logo */
+
+.navbar-brand {
+    text-decoration: none;
+    flex-shrink: 0;
+    margin-right: 15px;
+}
+
+.navbar-brand strong {
+    letter-spacing: 0.5px;
+}
+
+.navbar-brand small {
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Navigation */
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 2px;
+}
+
+.navbar-nav .nav-item {
+    white-space: nowrap;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #333;
+    margin: 0 1px;
+    padding: 8px 8px !important;
+    border-radius: 6px;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0d6efd;
+    background-color: #f0f6ff;
+}
+
+.navbar-nav .nav-link.active {
+    color: #0d6efd;
+    font-weight: 600;
+}
+
+/* Navbar icons */
+
+.navbar-nav .nav-link i {
+    display: block;
+    margin-bottom: 1px;
+}
+
+/* Buttons */
+
+.navbar .btn {
+    border-radius: 8px;
+    padding: 8px 13px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.navbar-nav .ms-lg-2 {
+    margin-left: 4px !important;
+}
+
+.navbar-nav .btn-primary {
+    min-width: 85px;
+}
+
+/* Prevent navbar content from overflowing */
+
+.navbar-collapse {
+    min-width: 0;
+}
+
+
+/* =====================================================
+   LARGE DESKTOP NAVBAR
+===================================================== */
+
+@media (min-width: 1200px) {
+
+    .navbar-brand {
+        margin-right: 8px;
+    }
+
+    .navbar-nav {
+        gap: 1px;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 14px;
+        padding-left: 6px !important;
+        padding-right: 6px !important;
+    }
+
+    .navbar .btn {
+        font-size: 14px;
+        padding: 8px 11px;
+    }
+}
+
+
+/* =====================================================
+   TABLET NAVBAR
+===================================================== */
+
+@media (max-width: 1199px) {
+
+    .navbar-nav {
+        align-items: flex-start;
+        padding-top: 15px;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 2px 0;
+        padding: 8px 0 !important;
+        text-align: left;
+    }
+
+    .navbar-nav .btn {
+        margin-top: 5px;
+    }
+}
+
+
+/* =====================================================
+   HERO SLIDER
+===================================================== */
+
+#heroSlider {
+    overflow: hidden;
+}
+
+.carousel-item {
+    min-height: 500px;
+}
+
+.carousel-item .container {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-item h1 {
+    font-size: 52px;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.carousel-item p {
+    font-size: 19px;
+    max-width: 650px;
+}
+
+.carousel-item .badge {
+    padding: 10px 16px;
+    font-size: 13px;
+    border-radius: 30px;
+}
+
+.carousel-item .btn {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.carousel-item .display-1 {
+    font-size: 150px;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 7%;
+}
+
+
+/* =====================================================
+   SECTION HEADINGS
+===================================================== */
+
+section h2 {
+    font-size: 36px;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+section .text-primary.fw-bold {
+    letter-spacing: 1.5px;
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   PRODUCT CARDS
+===================================================== */
+
+.card {
+    border-radius: 15px !important;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card > .text-center.bg-light {
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+.card-title {
+    font-weight: 600;
+}
+
+.card-body h5 {
+    font-weight: 600;
+}
+
+.card .badge {
+    padding: 7px 12px;
+    border-radius: 20px;
+}
+
+
+/* =====================================================
+   PRODUCT PRICE
+===================================================== */
+
+.text-primary {
+    color: #0d6efd !important;
+}
+
+
+/* =====================================================
+   ADD TO CART BUTTON
+===================================================== */
+
+.card .btn-primary {
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.card .btn-primary:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   BEST SELLING PRODUCTS
+===================================================== */
+
+.bg-light {
+    background-color: #f7faff !important;
+}
+
+.display-3,
+.display-4 {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .display-3,
+.card:hover .display-4 {
+    transform: scale(1.08);
+}
+
+.btn-outline-primary {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 9px 18px;
+}
+
+
+/* =====================================================
+   NEW ARRIVALS
+===================================================== */
+
+section .card h5 {
+    margin-bottom: 8px;
+}
+
+section .card p {
+    margin-bottom: 10px;
+}
+
+.new-arrival-card {
+    transition: all 0.3s ease;
+}
+
+
+/* =====================================================
+   HEALTHCARE CATEGORIES
+===================================================== */
+
+section .btn-link {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+section .btn-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   OFFERS SECTION
+===================================================== */
+
+#offers .bg-primary {
+    background: linear-gradient(
+        135deg,
+        #0d6efd,
+        #0056d6
+    ) !important;
+
+    box-shadow: 0 15px 40px rgba(13, 110, 253, 0.25);
+}
+
+#offers h2 {
+    font-size: 38px;
+}
+
+#offers p {
+    max-width: 700px;
+    font-size: 17px;
+}
+
+#offers .btn {
+    border-radius: 8px;
+    padding: 11px 25px;
+    font-weight: 600;
+}
+
+#offers .display-1 {
+    font-size: 100px;
+}
+
+
+/* =====================================================
+   HEALTH TIPS
+===================================================== */
+
+section .card a {
+    color: #0d6efd;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+section .card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+.text-warning {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+section .card .text-warning {
+    margin-bottom: 10px;
+}
+
+section .card h6 {
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+
+/* =====================================================
+   NEWSLETTER
+===================================================== */
+
+section form {
+    margin-top: 25px;
+}
+
+section form .form-control {
+    border-radius: 8px;
+    border: 1px solid #d8dee8;
+    padding: 12px 16px;
+}
+
+section form .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.15);
+}
+
+section form .btn {
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #111827 !important;
+    margin-top: 50px;
+}
+
+footer h3 {
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+footer h5 {
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+footer p {
+    line-height: 1.7;
+}
+
+footer a {
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffffff !important;
+    padding-left: 4px;
+}
+
+footer hr {
+    opacity: 0.2;
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(13, 110, 253, 0.25);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+}
+
+.btn-danger:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0d6efd;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0056d6;
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+===================================================== */
+
+@media (max-width: 991px) {
+
+    .navbar-nav {
+        padding-top: 15px;
+        align-items: flex-start;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 2px 0;
+        padding: 8px 0 !important;
+        text-align: left;
+    }
+
+    .navbar-nav .btn {
+        margin-top: 5px;
+    }
+
+    .carousel-item {
+        min-height: 450px;
+    }
+
+    .carousel-item .container {
+        min-height: 450px;
+    }
+
+    .carousel-item h1 {
+        font-size: 42px;
+    }
+
+    .carousel-item .display-1 {
+        font-size: 110px;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 767px) {
+
+    .navbar-brand strong {
+        font-size: 20px !important;
+    }
+
+    .navbar-brand small {
+        font-size: 10px;
+    }
+
+    .carousel-item {
+        min-height: 600px;
+        text-align: center;
+    }
+
+    .carousel-item .container {
+        min-height: 600px;
+    }
+
+    .carousel-item h1 {
+        font-size: 34px;
+    }
+
+    .carousel-item p {
+        font-size: 16px;
+    }
+
+    .carousel-item .display-1 {
+        font-size: 90px;
+        margin-top: 25px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    #offers {
+        text-align: center;
+    }
+
+    #offers h2 {
+        font-size: 28px;
+    }
+
+    #offers .display-1 {
+        font-size: 70px;
+        margin-top: 25px;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    footer .d-flex {
+        justify-content: center;
+    }
+}
+
+
+/* =====================================================
+   EXTRA SMALL DEVICES
+===================================================== */
+
+@media (max-width: 575px) {
+
+    .carousel-item h1 {
+        font-size: 29px;
+    }
+
+    .carousel-item .display-1 {
+        font-size: 70px;
+    }
+
+    section {
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
+    }
+
+    section h2 {
+        font-size: 26px;
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    #offers .bg-primary {
+        padding: 30px !important;
+    }
+}
+
+
+/* =====================================================
+   PRODUCT CATALOG
+===================================================== */
+
+.catalog-header {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+    color: white;
+    padding: 60px 20px;
+}
+
+.catalog-header h1 {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.catalog-header p {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+
+/* =====================================================
+   PRODUCT CARD
+===================================================== */
+
+.product-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   PRODUCT IMAGE
+===================================================== */
+
+.product-image {
+    height: 200px;
+    background: #f1f7ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 70px;
+    color: #0d6efd;
+}
+
+
+/* =====================================================
+   PRODUCT CARD CONTENT
+===================================================== */
+
+.product-card .card-body {
+    padding: 25px;
+}
+
+.product-card .card-title {
+    font-weight: 700;
+}
+
+.product-card p {
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   FILTER BUTTONS
+===================================================== */
+
+.filter-btn {
+    margin: 5px;
+    border-radius: 25px;
+    padding: 8px 18px;
+}
+
+
+/* =====================================================
+   SEARCH BOX
+===================================================== */
+
+#searchInput {
+    border-left: none;
+}
+
+.input-group-text {
+    background: white;
+}
+
+
+/* =====================================================
+   PRODUCT CATALOG MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .catalog-header {
+        padding: 40px 15px;
+    }
+
+    .catalog-header h1 {
+        font-size: 32px;
+    }
+
+    .catalog-header p {
+        font-size: 16px;
+    }
+
+    .filter-btn {
+        width: 100%;
+        margin: 4px 0;
+    }
+}

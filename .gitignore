@@ -1,0 +1,10 @@
+# Private files
+project pass/
+*.lnk
+
+# VS Code settings
+.vscode/
+
+# Local environment files
+.env
+.env.*
