@@ -7,4 +7,5 @@ project pass/
 
 # Local environment files
 .env
-.env.*
+.env.*node_modules/
+node_modules/
