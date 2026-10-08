@@ -762,6 +762,37 @@ async function createRazorpayOrder(amount) {
 
 
 // =====================================================
+// GET RAZORPAY PUBLIC KEY
+// =====================================================
+
+async function getRazorpayKey() {
+
+    const response =
+        await fetch(
+            "/.netlify/functions/razorpay-config"
+        );
+
+
+    const data =
+        await response.json();
+
+
+    if (
+        !response.ok ||
+        !data.keyId
+    ) {
+
+        throw new Error(
+            "Unable to load Razorpay Key ID."
+        );
+    }
+
+
+    return data.keyId;
+}
+
+
+// =====================================================
 // OPEN RAZORPAY TEST CHECKOUT
 // =====================================================
 
@@ -787,6 +818,11 @@ async function openRazorpayCheckout(
         getGrandTotal();
 
 
+    // Get Razorpay Test Key ID
+    const razorpayKey =
+        await getRazorpayKey();
+
+
     // Create Razorpay Test Order
     const razorpayOrder =
         await createRazorpayOrder(
@@ -798,7 +834,7 @@ async function openRazorpayCheckout(
 
         // TEST MODE KEY ID
         key:
-            "rzp_test_TlRxjsLJdEvErn",
+            razorpayKey,
 
         amount:
             razorpayOrder.amount,
