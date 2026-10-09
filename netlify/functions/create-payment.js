@@ -1,3 +1,4 @@
+```javascript
 // MediCare Pharmacy
 // Netlify Function - Create Razorpay Test Order
 
@@ -14,30 +15,29 @@ exports.handler = async function (event) {
     }
 
     try {
-
         const Razorpay = require("razorpay");
 
-        // Razorpay credentials will come from
-        // Netlify environment variables.
+        // Get credentials from Netlify environment variables
         const razorpay = new Razorpay({
-            key_id: process.env.RAZORPAY_KEY_ID,
+            key_id: process.env.RAZORPAY_PUBLIC_KEY_ID,
             key_secret: process.env.RAZORPAY_KEY_SECRET
         });
 
-        const body = JSON.parse(event.body);
-
+        const body = JSON.parse(event.body || "{}");
         const amount = Number(body.amount);
 
-        if (!amount || amount <= 0) {
+        // Validate amount
+        if (!Number.isFinite(amount) || amount <= 0) {
             return {
                 statusCode: 400,
                 body: JSON.stringify({
+                    success: false,
                     error: "Invalid amount"
                 })
             };
         }
 
-        // Razorpay expects the amount in paise.
+        // Convert rupees to paise
         const amountInPaise = Math.round(amount * 100);
 
         const order = await razorpay.orders.create({
@@ -48,6 +48,9 @@ exports.handler = async function (event) {
 
         return {
             statusCode: 200,
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
                 success: true,
                 orderId: order.id,
@@ -57,11 +60,13 @@ exports.handler = async function (event) {
         };
 
     } catch (error) {
-
         console.error("Razorpay order error:", error);
 
         return {
             statusCode: 500,
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
                 success: false,
                 error: "Unable to create payment order"
@@ -69,3 +74,4 @@ exports.handler = async function (event) {
         };
     }
 };
+```
