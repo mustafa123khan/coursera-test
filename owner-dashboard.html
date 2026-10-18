@@ -7,22 +7,125 @@
 
     <title>Owner Dashboard - MediCare Pharmacy</title>
 
+    <!-- Bootstrap -->
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet">
+        rel="stylesheet"
+    >
 
+    <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background-color: #f5f7fb;
+        }
+
+        .owner-orders-table {
+            width: 100%;
+            min-width: 1100px;
+            margin-bottom: 0;
+        }
+
+        .owner-orders-table th,
+        .owner-orders-table td {
+            padding: 12px 10px;
+            vertical-align: middle;
+        }
+
+        .owner-orders-table th {
+            white-space: nowrap;
+        }
+
+        .owner-orders-table .customer-id {
+            display: inline-block;
+            max-width: 190px;
+            overflow-wrap: anywhere;
+            font-size: 12px;
+        }
+
+        .owner-orders-table .order-status {
+            width: 155px;
+            min-width: 155px;
+        }
+
+        .orders-table-wrapper {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .owner-orders-table th.update-cell,
+        .owner-orders-table td.update-cell {
+            width: 110px;
+            min-width: 110px;
+            text-align: center;
+        }
+
+        /* Make the Save button visible */
+        .owner-orders-table button.save-status {
+            display: inline-block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            position: static !important;
+            width: auto;
+            min-width: 65px;
+            padding: 7px 12px;
+            white-space: nowrap;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .owner-orders-table button.save-status:disabled {
+            cursor: not-allowed;
+            opacity: 0.65 !important;
+        }
+
+        .owner-orders-table .payment-status {
+            white-space: nowrap;
+        }
+
+        #ordersLoading {
+            color: #555;
+        }
+
+        #dashboardContent .card {
+            overflow: visible;
+        }
+
+        @media (max-width: 768px) {
+            main.container {
+                padding-top: 25px !important;
+            }
+
+            .owner-orders-table {
+                min-width: 1100px;
+            }
+
+            .owner-orders-table th,
+            .owner-orders-table td {
+                padding: 10px 8px;
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-light">
 
+    <!-- Navigation -->
     <nav class="navbar navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
                 💊 MediCare Pharmacy
             </a>
 
-            <button id="logoutButton" class="btn btn-light">
+            <button
+                id="logoutButton"
+                class="btn btn-light"
+                type="button"
+            >
                 Logout
             </button>
         </div>
@@ -30,27 +133,33 @@
 
     <main class="container py-5">
 
+        <!-- Access verification -->
         <div id="loadingMessage" class="text-center py-5">
             <h4>Verifying owner access...</h4>
             <p>Please wait.</p>
         </div>
 
+        <!-- Dashboard -->
         <div id="dashboardContent" class="d-none">
 
             <h2 class="fw-bold mb-2">Owner Dashboard</h2>
-
             <p class="text-muted mb-4">
                 Manage MediCare Pharmacy orders.
             </p>
 
-            <div id="errorMessage"
-                 class="alert alert-danger d-none"
-                 role="alert"></div>
+            <div
+                id="errorMessage"
+                class="alert alert-danger d-none"
+                role="alert"
+            ></div>
 
-            <div id="successMessage"
-                 class="alert alert-success d-none"
-                 role="status"></div>
+            <div
+                id="successMessage"
+                class="alert alert-success d-none"
+                role="status"
+            ></div>
 
+            <!-- Summary cards -->
             <div class="row g-3 mb-4">
 
                 <div class="col-md-4">
@@ -85,32 +194,38 @@
 
             </div>
 
+            <!-- Orders -->
             <div class="card border-0 shadow-sm">
                 <div class="card-body">
 
-                    <div class="d-flex justify-content-between
-                                align-items-center flex-wrap gap-3 mb-3">
-
+                    <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
                         <h4 class="mb-0">Customer Orders</h4>
 
-                        <button id="refreshButton"
-                                class="btn btn-outline-primary">
+                        <button
+                            id="refreshButton"
+                            class="btn btn-outline-primary"
+                            type="button"
+                        >
                             ↻ Refresh Orders
                         </button>
-
                     </div>
 
-                    <div id="ordersLoading" class="text-center py-4">
+                    <div
+                        id="ordersLoading"
+                        class="text-center py-4"
+                    >
                         Loading orders...
                     </div>
 
-                    <div id="emptyMessage"
-                         class="alert alert-info d-none">
+                    <div
+                        id="emptyMessage"
+                        class="alert alert-info d-none"
+                    >
                         No orders have been placed yet.
                     </div>
 
-                    <div class="table-responsive">
-                        <table class="table table-hover align-middle">
+                    <div class="orders-table-wrapper">
+                        <table class="table table-hover align-middle owner-orders-table">
                             <thead class="table-primary">
                                 <tr>
                                     <th>Order ID</th>
@@ -119,7 +234,7 @@
                                     <th>Order Amount</th>
                                     <th>Payment Status</th>
                                     <th>Order Status</th>
-                                    <th>Update</th>
+                                    <th class="update-cell">Update</th>
                                 </tr>
                             </thead>
 
@@ -127,7 +242,7 @@
                         </table>
                     </div>
 
-                    <p class="text-muted small mb-0">
+                    <p class="text-muted small mt-3 mb-0">
                         Order status changes do not confirm or process payments.
                     </p>
 
@@ -135,41 +250,25 @@
             </div>
 
         </div>
-
     </main>
 
+    <!-- Supabase libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="./js/supabase-config.js"></script>
 
     <script>
-        const loadingMessage =
-            document.getElementById("loadingMessage");
+        "use strict";
 
-        const dashboardContent =
-            document.getElementById("dashboardContent");
+        const loadingMessage = document.getElementById("loadingMessage");
+        const dashboardContent = document.getElementById("dashboardContent");
+        const errorMessage = document.getElementById("errorMessage");
+        const successMessage = document.getElementById("successMessage");
+        const logoutButton = document.getElementById("logoutButton");
+        const refreshButton = document.getElementById("refreshButton");
+        const ordersLoading = document.getElementById("ordersLoading");
+        const emptyMessage = document.getElementById("emptyMessage");
+        const ordersTableBody = document.getElementById("ordersTableBody");
 
-        const errorMessage =
-            document.getElementById("errorMessage");
-
-        const successMessage =
-            document.getElementById("successMessage");
-
-        const logoutButton =
-            document.getElementById("logoutButton");
-
-        const refreshButton =
-            document.getElementById("refreshButton");
-
-        const ordersLoading =
-            document.getElementById("ordersLoading");
-
-        const emptyMessage =
-            document.getElementById("emptyMessage");
-
-        const ordersTableBody =
-            document.getElementById("ordersTableBody");
-
-        // These values must match the database function.
         const allowedStatuses = [
             "Pending",
             "Processing",
@@ -221,17 +320,18 @@
         }
 
         function formatDate(value) {
-            if (!value) return "Not available";
-
-            const date = new Date(value);
-
-            if (Number.isNaN(date.getTime())) {
+            if (!value) {
                 return "Not available";
             }
 
-            return date.toLocaleString("en-IN");
+            const date = new Date(value);
+
+            return Number.isNaN(date.getTime())
+                ? "Not available"
+                : date.toLocaleString("en-IN");
         }
 
+        // Verify that the logged-in user is the pharmacy owner.
         async function checkOwnerAccess() {
             try {
                 if (typeof db === "undefined") {
@@ -242,17 +342,20 @@
 
                 const { data, error } = await db.auth.getUser();
 
-                if (error || !data.user) {
+                if (error) {
+                    throw error;
+                }
+
+                if (!data.user) {
                     window.location.replace("owner-login.html");
                     return;
                 }
 
-                const { data: profile, error: profileError } =
-                    await db
-                        .from("profiles")
-                        .select("role")
-                        .eq("id", data.user.id)
-                        .single();
+                const { data: profile, error: profileError } = await db
+                    .from("profiles")
+                    .select("role")
+                    .eq("id", data.user.id)
+                    .single();
 
                 if (profileError || profile?.role !== "owner") {
                     await db.auth.signOut();
@@ -269,12 +372,12 @@
                 loadingMessage.classList.add("d-none");
 
                 showError(
-                    error.message ||
-                    "Unable to verify access. Please try again."
+                    error.message || "Unable to verify owner access."
                 );
             }
         }
 
+        // Load orders from Supabase.
         async function loadOrders() {
             clearMessages();
 
@@ -291,7 +394,9 @@
                     )
                     .order("created_at", { ascending: false });
 
-                if (error) throw error;
+                if (error) {
+                    throw error;
+                }
 
                 orders = data || [];
 
@@ -300,7 +405,10 @@
 
                 const total = orders.reduce((sum, order) => {
                     const amount = Number(order.total_amount);
-                    return sum + (Number.isFinite(amount) ? amount : 0);
+
+                    return sum + (
+                        Number.isFinite(amount) ? amount : 0
+                    );
                 }, 0);
 
                 document.getElementById("totalValue").textContent =
@@ -308,7 +416,9 @@
 
                 document.getElementById("pendingOrders").textContent =
                     orders.filter(order =>
-                        String(order.status || "").toLowerCase() === "pending"
+                        String(order.status || "")
+                            .trim()
+                            .toLowerCase() === "pending"
                     ).length;
 
                 if (orders.length === 0) {
@@ -320,61 +430,84 @@
 
             } catch (error) {
                 showError(
-                    "Could not load orders: " +
-                    (error.message || "Unknown error")
+                    "Could not load orders: " + error.message
                 );
+
             } finally {
                 ordersLoading.classList.add("d-none");
                 refreshButton.disabled = false;
             }
         }
 
+        // Display the orders and a visible Save button for every row.
         function renderOrders() {
             ordersTableBody.innerHTML = orders.map(order => {
-                const currentStatus = String(order.status || "");
+                const currentStatus = String(order.status || "").trim();
 
-                // Preserve an existing status in the dropdown even if it
-                // isn't one of the five currently allowed statuses.
-                const statuses = [...allowedStatuses];
+                const matchingStatus = allowedStatuses.find(status =>
+                    status.toLowerCase() === currentStatus.toLowerCase()
+                );
 
-                if (currentStatus && !statuses.includes(currentStatus)) {
-                    statuses.push(currentStatus);
-                }
-
-                const options = statuses.map(status => `
-                    <option value="${escapeHTML(status)}"
-                        ${status === currentStatus ? "selected" : ""}>
+                const options = allowedStatuses.map(status => `
+                    <option
+                        value="${escapeHTML(status)}"
+                        ${status === matchingStatus ? "selected" : ""}
+                    >
                         ${escapeHTML(status)}
                     </option>
                 `).join("");
+
+                const statusOptions = matchingStatus
+                    ? options
+                    : `
+                        <option value="" selected disabled>
+                            ${escapeHTML(currentStatus || "Unknown status")}
+                        </option>
+                        ${options}
+                    `;
 
                 return `
                     <tr>
                         <td>#${escapeHTML(order.id)}</td>
 
                         <td>
-                            <small>${escapeHTML(order.user_id || "Unavailable")}</small>
+                            <small class="customer-id">
+                                ${escapeHTML(order.user_id || "Unavailable")}
+                            </small>
                         </td>
 
-                        <td>${escapeHTML(formatDate(order.created_at))}</td>
+                        <td>
+                            ${escapeHTML(formatDate(order.created_at))}
+                        </td>
 
-                        <td>${escapeHTML(formatMoney(order.total_amount))}</td>
+                        <td>
+                            ${escapeHTML(formatMoney(order.total_amount))}
+                        </td>
 
-                        <td>${escapeHTML(order.payment_status || "Unknown")}</td>
+                        <td class="payment-status">
+                            ${escapeHTML(order.payment_status || "Unknown")}
+                        </td>
 
                         <td>
                             <select
                                 class="form-select form-select-sm order-status"
                                 data-order-id="${escapeHTML(order.id)}"
-                                aria-label="Order status for order ${escapeHTML(order.id)}">
-                                ${options}
+                                aria-label="Status for order ${escapeHTML(order.id)}"
+                            >
+                                ${statusOptions}
                             </select>
                         </td>
 
-                        <td>
+                        <td
+                            class="update-cell"
+                            style="min-width:110px;width:110px;text-align:center;"
+                        >
                             <button
-                                class="btn btn-sm btn-primary save-status"
-                                data-order-id="${escapeHTML(order.id)}">
+                                type="button"
+                                class="btn btn-primary btn-sm save-status"
+                                data-order-id="${escapeHTML(order.id)}"
+                                style="display:inline-block!important;visibility:visible!important;opacity:1!important;"
+                            >
                                 Save
                             </button>
                         </td>
@@ -382,20 +515,26 @@
                 `;
             }).join("");
 
-            ordersTableBody
-                .querySelectorAll(".save-status")
-                .forEach(button => {
-                    button.addEventListener("click", () => {
-                        updateOrderStatus(button.dataset.orderId, button);
-                    });
+            // Attach click events after the rows have been created.
+            ordersTableBody.querySelectorAll(".save-status").forEach(button => {
+                button.addEventListener("click", () => {
+                    updateOrderStatus(button.dataset.orderId, button);
                 });
+            });
         }
 
+        // Update the order status using the secure Supabase RPC.
         async function updateOrderStatus(orderId, button) {
             clearMessages();
 
             const row = button.closest("tr");
-            const select = row.querySelector(".order-status");
+            const select = row?.querySelector(".order-status");
+
+            if (!select) {
+                showError("Status dropdown not found. Please refresh.");
+                return;
+            }
+
             const newStatus = select.value;
 
             const originalOrder = orders.find(
@@ -403,17 +542,20 @@
             );
 
             if (!originalOrder) {
-                showError("Order not found. Please refresh the page.");
-                return;
-            }
-
-            if (newStatus === String(originalOrder.status || "")) {
-                showSuccess("No status change was needed.");
+                showError("Order not found. Refresh and try again.");
                 return;
             }
 
             if (!allowedStatuses.includes(newStatus)) {
-                showError("Please select one of the supported order statuses.");
+                showError("Please select a valid order status.");
+                return;
+            }
+
+            if (
+                newStatus.toLowerCase() ===
+                String(originalOrder.status || "").trim().toLowerCase()
+            ) {
+                showSuccess("No status change was needed.");
                 return;
             }
 
@@ -430,24 +572,25 @@
                     }
                 );
 
-                if (error) throw error;
+                if (error) {
+                    throw error;
+                }
 
                 if (data !== true) {
                     throw new Error(
-                        "Order was not found. Please refresh the page."
+                        "Order not found. Please refresh and try again."
                     );
                 }
 
-                showSuccess(
-                    `Order #${orderId} status updated to ${newStatus}.`
-                );
-
                 await loadOrders();
+
+                showSuccess(
+                    `Order #${orderId} updated to ${newStatus}.`
+                );
 
             } catch (error) {
                 showError(
-                    "Status update failed: " +
-                    (error.message || "Please try again.")
+                    "Status update failed: " + error.message
                 );
 
                 button.disabled = false;
@@ -456,8 +599,10 @@
             }
         }
 
+        // Refresh orders.
         refreshButton.addEventListener("click", loadOrders);
 
+        // Log out the owner.
         logoutButton.addEventListener("click", async () => {
             logoutButton.disabled = true;
             clearMessages();
@@ -465,16 +610,22 @@
             try {
                 const { error } = await db.auth.signOut();
 
-                if (error) throw error;
+                if (error) {
+                    throw error;
+                }
 
                 window.location.replace("owner-login.html");
 
             } catch (error) {
                 logoutButton.disabled = false;
-                showError("Logout failed. Please try again.");
+
+                showError(
+                    "Logout failed: " + error.message
+                );
             }
         });
 
+        // Start the dashboard.
         checkOwnerAccess();
     </script>
 

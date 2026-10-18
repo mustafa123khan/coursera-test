@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Owner Login - MediCare Pharmacy</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -37,7 +38,9 @@
                         </p>
                     </div>
 
-                    <div id="loginError" class="alert alert-danger d-none"></div>
+                    <div id="loginError"
+                         class="alert alert-danger d-none"
+                         role="alert"></div>
 
                     <form id="ownerLoginForm">
                         <div class="mb-3">
@@ -77,6 +80,11 @@
                     <p class="text-muted small mt-4 mb-0">
                         Access is restricted to an authorized owner account.
                     </p>
+
+                    <div class="text-center mt-3">
+                        <a href="index.html">Back to Home</a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -91,42 +99,82 @@ const form = document.getElementById("ownerLoginForm");
 const errorBox = document.getElementById("loginError");
 const button = document.getElementById("ownerLoginButton");
 
+function showError(message) {
+    errorBox.textContent = message;
+    errorBox.classList.remove("d-none");
+}
+
 form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     errorBox.classList.add("d-none");
     button.disabled = true;
-    button.textContent = "Checking account...";
+    button.textContent = "Verifying owner...";
+
+    let signedIn = false;
 
     try {
+        // Check that the existing Supabase configuration is loaded.
+        if (typeof db === "undefined" || !db.auth) {
+            throw new Error("Supabase configuration did not load.");
+        }
+
         const email = document.getElementById("ownerEmail").value.trim();
         const password = document.getElementById("ownerPassword").value;
 
+        // Step 1: Authenticate with Supabase Auth.
         const { data, error } = await db.auth.signInWithPassword({
             email,
             password
         });
 
-        if (error) throw error;
+        if (error) {
+            throw new Error("Sign-in failed. Check your email and password.");
+        }
 
-        // This server-side/RLS-protected role check must be configured
-        // before the owner dashboard can be considered secure.
+        signedIn = true;
+
+        if (!data.user) {
+            throw new Error("Unable to verify the signed-in account.");
+        }
+
+        // Step 2: Check the owner's role in the database.
+        // The profiles table and its RLS policies must be configured securely.
         const { data: profile, error: profileError } = await db
             .from("profiles")
             .select("role")
             .eq("id", data.user.id)
-            .single();
+            .maybeSingle();
 
-        if (profileError || profile?.role !== "owner") {
+        if (profileError || !profile || profile.role !== "owner") {
+            // Do not leave an unauthorized account signed in.
             await db.auth.signOut();
-            throw new Error("This account is not authorized for owner access.");
+            signedIn = false;
+
+            throw new Error(
+                "This account is not authorized for owner access."
+            );
         }
 
-        window.location.href = "owner-dashboard.html";
+        // Step 3: Redirect only after the owner role is confirmed.
+        window.location.replace("owner-dashboard.html");
+
     } catch (error) {
-        errorBox.textContent = error.message ||
-            "Unable to sign in. Please try again.";
-        errorBox.classList.remove("d-none");
+        // Clean up any session if verification failed.
+        if (signedIn) {
+            try {
+                await db.auth.signOut();
+            } catch (_) {
+                // Do not display internal error details.
+            }
+        }
+
+        showError(
+            error.message === "Supabase configuration did not load."
+                ? "Connection setup failed. Check your Supabase configuration."
+                : error.message || "Unable to sign in. Please try again."
+        );
+
     } finally {
         button.disabled = false;
         button.textContent = "Sign In as Owner";
